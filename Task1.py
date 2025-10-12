@@ -5,7 +5,6 @@ lock = threading.Lock()
 
 def count_words(filename):
     global total_words
-    # with open(filename, 'r', encoding='utf-8') as f:
     with open(filename, 'r') as f:
         text = f.read()
         word_count = len(text.split())
@@ -14,7 +13,6 @@ def count_words(filename):
         print(f"{filename}: {word_count} words")
 
 files = ['file1.txt', 'file2.txt', 'file3.txt']
-# files = ['file1.txt']
 
 threads = []
 for file in files:
