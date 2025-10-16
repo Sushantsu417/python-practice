@@ -1,0 +1,22 @@
+# Transpose File
+
+file = open('leetcode.txt', 'r')
+lines = file.readlines()
+file.close()
+
+data = []
+for line in lines:
+    words = line.strip().split(' ')
+    data.append(words)
+
+
+transposed = []
+for i in range(len(data[0])):          
+    new_row = []
+    for j in range(len(data)):         
+        new_row.append(data[j][i])     
+    transposed.append(new_row)
+
+
+for row in transposed:
+    print(' '.join(row))
